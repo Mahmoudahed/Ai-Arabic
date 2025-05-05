@@ -1,9 +1,9 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { Button } from '@/components/ui/button';
+import { Button } from '../components/ui/button';
 import { MessageSquare } from 'lucide-react';
-import TextReader from '@/components/TextReader';
+import TextReader from '../components/TextReader';
 
 const Index = () => {
   const router = useRouter();

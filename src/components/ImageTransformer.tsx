@@ -1,11 +1,11 @@
 
 import { useState } from 'react';
-import { Button } from '@/components/ui2/button';
-import { Card, CardContent } from '@/components/ui2/card';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui2/select';
-import { Switch } from '@/components/ui2/switch';
-import { Label } from '@/components/ui2/label';
-import { ProcessOptions } from '@/types/indexs';
+import { Button } from 'ui2/button';
+import { Card, CardContent } from 'ui2/card';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from 'ui2/select';
+import { Switch } from 'ui2/switch';
+import { Label } from 'ui2/label';
+import { ProcessOptions } from '../types/indexs';
 import { Brush, Wand2, Palette } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 

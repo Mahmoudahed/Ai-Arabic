@@ -197,3 +197,73 @@ npm run android:build
 ## License
 
 ISC
+
+## Deployment on Vercel
+
+### Prerequisites for Deployment
+
+- A Vercel account
+- GitHub repository with the project
+
+### Deployment Steps
+
+1. Connect your GitHub repository to Vercel
+2. Configure the following build settings:
+   - Build Command: `npm run vercel-build`
+   - Output Directory: `out`
+   - Install Command: `npm install --legacy-peer-deps`
+
+### Troubleshooting Deployment Issues
+
+#### Import Path Alias Issues
+
+This project uses path aliases (e.g., `@/components`) which can cause build issues on Vercel. We've implemented an automatic fix for this:
+
+1. The `scripts/fix-paths.js` script automatically converts all `@/` import paths to relative paths during the build
+2. This script runs as part of the `vercel-build` command
+
+If you're experiencing path-related errors in your Vercel deployment:
+
+1. Make sure your `vercel.json` file contains:
+```json
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next",
+      "config": {
+        "installCommand": "npm install --legacy-peer-deps",
+        "buildCommand": "npm run vercel-build"
+      }
+    }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
+```
+
+2. Ensure your `package.json` includes:
+```json
+"scripts": {
+  "fix-paths": "node scripts/fix-paths.js",
+  "vercel-build": "npm install --legacy-peer-deps && node scripts/fix-paths.js && next build"
+}
+```
+
+3. You can run the path fixing script locally to verify it works:
+```bash
+npm run fix-paths
+```
+
+4. If needed, manually update any remaining import paths that use `@/` to relative paths.
+
+#### Dependency Conflicts
+
+The project uses React 19 but some dependencies like `react-speech-kit` require older React versions. We resolve this using:
+
+```
+# .npmrc
+legacy-peer-deps=true
+```

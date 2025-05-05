@@ -1,6 +1,6 @@
 import { db } from './firebase';
 import { collection, addDoc, getDocs, query, where, orderBy, deleteDoc, doc } from 'firebase/firestore';
-import { ContentHistory } from '@/types/content';
+import { ContentHistory } from '../types/content';
 
 export const saveContent = async (content: Omit<ContentHistory, 'id'>): Promise<string> => {
   try {

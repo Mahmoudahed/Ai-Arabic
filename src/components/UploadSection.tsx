@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { Button } from '@/components/ui2/button';
-import { Card, CardContent } from '@/components/ui2/card';
+import { Button } from 'ui2/button';
+import { Card, CardContent } from 'ui2/card';
 import { Camera, Upload, Image as ImageIcon, Pencil } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';

@@ -2,7 +2,7 @@
 
 import { ReactNode, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { auth } from '@/lib/firebase';
+import { auth } from '../lib/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 
 interface SplashScreenProps {

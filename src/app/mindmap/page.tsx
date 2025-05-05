@@ -1,8 +1,8 @@
 import React from 'react';
-import { MindMapCanvas } from '@/components/MindMapCanvas';
-import { Sidebar } from '@/components/Sidebar';
-import { MindMapProvider } from '@/context/MindMapContext';
-import { Toaster } from '@/components/ui/Toaster';
+import { MindMapCanvas } from '../../components/MindMapCanvas';
+import { Sidebar } from '../../components/Sidebar';
+import { MindMapProvider } from '../../context/MindMapContext';
+import { Toaster } from '../../components/ui/Toaster';
 
 function App() {
   return (

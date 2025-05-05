@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useTranslation } from '@/app/i18n/client';
+import { useTranslation } from '../i18n/client';
 import { FaTrash, FaCopy, FaArrowLeft } from 'react-icons/fa';
 import toast from 'react-hot-toast';
 

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import * as Select from '@radix-ui/react-select';
-import { Label } from '@/components/ui/label';
+import { Label } from './ui/label';
 import { Mic } from 'lucide-react';
 
 interface VoiceSelectorProps {

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Image, ProcessOptions } from '@/types/indexs';
+import { Image, ProcessOptions } from '../types/indexs';
 import { toast } from 'sonner';
 
 export function useImageTransformation() {

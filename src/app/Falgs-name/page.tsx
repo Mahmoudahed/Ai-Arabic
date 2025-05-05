@@ -1,7 +1,7 @@
 import React from 'react';
-import { Layout } from '@/components/Layout';
-import { FlagGenerator } from '@/components/FlagGenerator';
-import { Footer } from '@/components/Footrs';
+import { Layout } from '../../components/Layout';
+import { FlagGenerator } from '../../components/FlagGenerator';
+import { Footer } from '../../components/Footrs';
 
 function App() {
   return (

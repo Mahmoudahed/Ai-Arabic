@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { registerUser } from '@/lib/auth';
+import { registerUser } from '../../lib/auth';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
-import { useTranslation } from '@/app/i18n/client';
+import { useTranslation } from '../i18n/client';
 
 export default function RegisterPage({ params: { lng } }: { params: { lng: string } }) {
   const router = useRouter();

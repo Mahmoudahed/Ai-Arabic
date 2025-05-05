@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui2/button';
-import { Textarea } from '@/components/ui2/textarea';
-import { Card, CardContent } from '@/components/ui2/card';
+import { Button } from 'ui2/button';
+import { Textarea } from 'ui2/textarea';
+import { Card, CardContent } from 'ui2/card';
 import { Loader2, Brain, AlertCircle, RefreshCw, Key } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';

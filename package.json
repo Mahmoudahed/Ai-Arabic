@@ -17,7 +17,9 @@
     "ios:open": "npx cap open ios",
     "mobile:setup": "npm run android:icons && npm run android",
     "generate:icons": "node scripts/create-icons.js",
-    "vercel-build": "npm install --legacy-peer-deps && next build"
+    "fix-paths": "node scripts/fix-paths.js",
+    "post-build-check": "node scripts/post-build-check.js",
+    "vercel-build": "npm install --legacy-peer-deps && node scripts/fix-paths.js && next build && node scripts/post-build-check.js"
   },
   "keywords": [],
   "author": "",

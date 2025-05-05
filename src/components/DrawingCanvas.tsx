@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Canvas as FabricCanvas, Circle, Rect, PencilBrush } from "fabric";
-import { Button } from "@/components/ui2/button";
+import { Button } from "ui2/button";
 import { Brush, Eraser, Square, Circle as CircleIcon, Wand2, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";

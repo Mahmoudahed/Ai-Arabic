@@ -1,4 +1,4 @@
-import { Node } from '@/lib/types';
+import { Node } from '../lib/types';
 
 interface MindMapViewProps {
   nodes: Node[];

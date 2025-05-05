@@ -1,9 +1,9 @@
 
 import React from 'react';
-import { Card, CardContent } from '@/components/ui2/card';
-import { Button } from '@/components/ui2/button';
+import { Card, CardContent } from 'ui2/card';
+import { Button } from 'ui2/button';
 import { Trash2, Download } from 'lucide-react';
-import { Image } from '@/types/indexs';
+import { Image } from '../types/indexs';
 import { motion } from 'framer-motion';
 
 interface GalleryProps {

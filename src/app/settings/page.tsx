@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { useTranslation } from '@/app/i18n/client';
+import { useTranslation } from '../i18n/client';
 import { FaUser, FaBell, FaLock, FaShieldAlt, FaStar, FaQuestionCircle, FaTrash } from 'react-icons/fa';
 import toast from 'react-hot-toast';
-import { auth } from '@/lib/firebase';
+import { auth } from '../../lib/firebase';
 import { onAuthStateChanged, updateProfile, signOut } from 'firebase/auth';
 
 const languages = [

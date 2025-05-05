@@ -1,16 +1,16 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import TextInput from './TextInput2';
+import { useSpeechSynthesis } from 'react-speech-kit';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Slider } from './ui/slider';
+import { Button } from './ui/button';
+import { Textarea } from './ui/textarea';
+import TextInput2 from './TextInput2';
 import VoiceSelector from './VoiceSelector';
 import PlaybackControls from './PlaybackControls';
-import { useSpeechSynthesis } from 'react-speech-kit';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Slider } from '@/components/ui/slider';
 import { FileText, Download, Volume2, VolumeX, Play, Pause, StopCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useSpeechDownload } from '@/hooks/useSpeechDownload';
-import { Textarea } from '@/components/ui/textarea';
+import { useSpeechDownload } from '../hooks/useSpeechDownload';
 
 const TextReader = () => {
   const [text, setText] = useState('');
@@ -88,7 +88,7 @@ const TextReader = () => {
         </CardHeader>
         
         <CardContent className="p-6 space-y-6">
-          <TextInput 
+          <TextInput2 
             value={text} 
             onChange={setText} 
             label="Enter or paste text to be read"

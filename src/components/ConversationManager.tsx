@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { FaPlus, FaTrash } from 'react-icons/fa'
-import { getConversations, deleteConversation } from '@/utils/conversationStorage'
+import { getConversations, deleteConversation } from '../utils/conversationStorage'
 
 interface Message {
   role: 'user' | 'assistant'
