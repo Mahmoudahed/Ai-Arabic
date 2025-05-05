@@ -16,7 +16,8 @@
     "ios": "node build-android.js && npx cap add ios",
     "ios:open": "npx cap open ios",
     "mobile:setup": "npm run android:icons && npm run android",
-    "generate:icons": "node scripts/create-icons.js"
+    "generate:icons": "node scripts/create-icons.js",
+    "vercel-build": "npm install --legacy-peer-deps && next build"
   },
   "keywords": [],
   "author": "",
