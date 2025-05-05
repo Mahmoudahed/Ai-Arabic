@@ -1,12 +1,11 @@
 'use client'
 
-
 import React, { useState, useEffect } from 'react';
-import FieldView from '@/components/FieldView';
-import ControlPanel from '@/components/ControlPanelFootball';
-import Header from '@/components/HeaderFootball';
-import { Player, FormationType } from '@/types';
-import { formations, defaultPlayers } from '@/data/formations';
+import FieldView from '../../components/FieldView';
+import ControlPanel from '../../components/ControlPanelFootball';
+import Header from '../../components/HeaderFootball';
+import { Player, FormationType } from '../../types';
+import { formations, defaultPlayers } from '../../data/formations';
 
 function App() {
   const [players, setPlayers] = useState<Player[]>(defaultPlayers);

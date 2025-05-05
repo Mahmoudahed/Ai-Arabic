@@ -173,8 +173,8 @@ A modern AI services and assistance platform built with Next.js and Capacitor.
 
 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/ai-assistant.git
-cd ai-assistant
+git clone https://github.com/Mahmoudahed/Ai-Arabic.git
+cd Ai-Arabic
 ```
 
 2. Install dependencies

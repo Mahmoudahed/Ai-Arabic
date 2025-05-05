@@ -2,9 +2,9 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
-import { saveConversation, getConversations, updateConversation } from '@/utils/conversationStorage'
-import VoiceAndImageInput from '@/components/VoiceAndImageInput'
-import ConversationManager from '@/components/ConversationManager'
+import { saveConversation, getConversations, updateConversation } from '../../utils/conversationStorage'
+import VoiceAndImageInput from '../../components/VoiceAndImageInput'
+import ConversationManager from '../../components/ConversationManager'
 
 interface Message {
   role: 'user' | 'assistant'
