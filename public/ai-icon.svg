@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="90" fill="#4F46E5" />
+  
+  <!-- Brain Circuit Design -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="3">
+    <!-- Brain outline -->
+    <path d="M70,60 Q85,40 100,60 Q115,40 130,60 Q150,70 150,100 Q150,130 130,140 Q115,155 100,140 Q85,155 70,140 Q50,130 50,100 Q50,70 70,60" />
+    
+    <!-- Circuit lines -->
+    <path d="M70,100 L130,100" />
+    <path d="M100,60 L100,140" />
+    <circle cx="70" cy="100" r="5" fill="#FFFFFF" />
+    <circle cx="100" cy="60" r="5" fill="#FFFFFF" />
+    <circle cx="130" cy="100" r="5" fill="#FFFFFF" />
+    <circle cx="100" cy="140" r="5" fill="#FFFFFF" />
+    
+    <!-- Connection nodes -->
+    <circle cx="85" cy="80" r="4" fill="#FFFFFF" />
+    <circle cx="115" cy="80" r="4" fill="#FFFFFF" />
+    <circle cx="85" cy="120" r="4" fill="#FFFFFF" />
+    <circle cx="115" cy="120" r="4" fill="#FFFFFF" />
+    
+    <!-- Pulse effect -->
+    <circle cx="100" cy="100" r="15" stroke="#FFFFFF" stroke-dasharray="3,3" />
+    <circle cx="100" cy="100" r="25" stroke="#FFFFFF" stroke-dasharray="2,4" stroke-opacity="0.7" />
+  </g>
+</svg> 

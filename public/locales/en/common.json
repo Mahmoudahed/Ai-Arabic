@@ -1,0 +1,36 @@
+{
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "languageChanged": "Language changed successfully",
+    "profile": "Profile Settings",
+    "updateProfile": "Update Profile",
+    "updating": "Updating...",
+    "profileUpdated": "Profile updated successfully",
+    "updateError": "Error updating profile",
+    "selectLanguages": "Select your preferred languages",
+    "keepOneLanguage": "You must keep at least one language selected"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "displayName": "Name",
+    "loginSuccess": "Logged in successfully",
+    "registerSuccess": "Account created successfully",
+    "passwordMismatch": "Passwords do not match",
+    "loginError": "Invalid email or password",
+    "registerError": "Error creating account",
+    "creatingAccount": "Creating account...",
+    "haveAccount": "Already have an account?"
+  },
+  "home": {
+    "title": "What would you like to generate today?",
+    "social": "Social Media Post",
+    "instagram": "Instagram Caption",
+    "video": "Video Script",
+    "campaign": "Campaign Idea"
+  }
+} 

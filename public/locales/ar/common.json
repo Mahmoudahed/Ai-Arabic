@@ -1,0 +1,36 @@
+{
+  "settings": {
+    "title": "الإعدادات",
+    "language": "اللغة",
+    "languageChanged": "تم تغيير اللغة بنجاح",
+    "profile": "إعدادات الملف الشخصي",
+    "updateProfile": "تحديث الملف الشخصي",
+    "updating": "جاري التحديث...",
+    "profileUpdated": "تم تحديث الملف الشخصي بنجاح",
+    "updateError": "حدث خطأ أثناء تحديث الملف الشخصي",
+    "selectLanguages": "اختر اللغات المفضلة لديك",
+    "keepOneLanguage": "يجب الاحتفاظ بلغة واحدة على الأقل"
+  },
+  "auth": {
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "displayName": "الاسم",
+    "loginSuccess": "تم تسجيل الدخول بنجاح",
+    "registerSuccess": "تم إنشاء الحساب بنجاح",
+    "passwordMismatch": "كلمة المرور غير متطابقة",
+    "loginError": "البريد الإلكتروني أو كلمة المرور غير صحيحة",
+    "registerError": "حدث خطأ أثناء إنشاء الحساب",
+    "creatingAccount": "جاري إنشاء الحساب...",
+    "haveAccount": "هل لديك حساب بالفعل؟"
+  },
+  "home": {
+    "title": "ماذا تريد أن تولد اليوم؟",
+    "social": "منشور على وسائل التواصل الاجتماعي",
+    "instagram": "نص انستغرام",
+    "video": "نص فيديو",
+    "campaign": "فكرة حملة"
+  }
+} 
