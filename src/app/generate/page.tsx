@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { generateContent } from '@/lib/gemini';
+import { generateContent } from '../../lib/gemini';
 import toast from 'react-hot-toast';
 
 // المجالات، الأهداف، اللهجات، اللغات

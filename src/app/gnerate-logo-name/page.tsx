@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import LogoGenerator from '@/components/LogoGenerator';
+import LogoGenerator from '../../components/LogoGenerator';
 
 function App() {
   return (

@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { FaCog, FaRobot, FaLightbulb, FaArchive, FaImage, FaVideo, FaVolumeUp, FaMicrophone, FaFile, FaTextHeight, FaFootballBall } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import { useTranslation } from '@/app/i18n/client';
-import { auth } from '@/lib/firebase';
+import { useTranslation } from '../i18n/client';
+import { auth } from '../../lib/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import Link from 'next/link';
 
