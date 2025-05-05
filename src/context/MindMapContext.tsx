@@ -36,27 +36,34 @@ const MindMapContext = createContext<MindMapContextType>({} as MindMapContextTyp
 
 export const useMindMap = () => useContext(MindMapContext);
 
-const initialRoot: NodeType = {
-  id: '1',
-  text: 'Central Idea',
-  x: window.innerWidth / 2 - 75,
-  y: window.innerHeight / 2 - 30,
-  isRoot: true,
-  level: 0,
+const createInitialRoot = (): NodeType => {
+  const defaultX = 400;
+  const defaultY = 300;
+  
+  const x = typeof window !== 'undefined' ? window.innerWidth / 2 - 75 : defaultX;
+  const y = typeof window !== 'undefined' ? window.innerHeight / 2 - 30 : defaultY;
+  
+  return {
+    id: '1',
+    text: 'Central Idea',
+    x, y,
+    isRoot: true,
+    level: 0,
+  };
 };
 
-const initialState: MindMapState = {
-  nodes: [initialRoot],
+const createInitialState = (): MindMapState => ({
+  nodes: [createInitialRoot()],
   connections: [],
   selectedNodeId: null,
   mindMapName: 'Untitled Mind Map',
-};
+});
 
 const MAX_HISTORY = 50;
 
 export const MindMapProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [state, setState] = useState<MindMapState>(initialState);
-  const [history, setHistory] = useState<MindMapState[]>([initialState]);
+  const [state, setState] = useState<MindMapState>(createInitialState);
+  const [history, setHistory] = useState<MindMapState[]>([createInitialState()]);
   const [historyIndex, setHistoryIndex] = useState(0);
   const { showToast } = useToast();
 
@@ -183,11 +190,16 @@ export const MindMapProvider: React.FC<{ children: React.ReactNode }> = ({ child
       return;
     }
     
+    const defaultX = 400;
+    const defaultY = 300;
+    const x = typeof window !== 'undefined' ? window.innerWidth / 2 - 75 : defaultX;
+    const y = typeof window !== 'undefined' ? window.innerHeight / 2 - 30 : defaultY;
+    
     const newRoot: NodeType = {
       id: generateId(),
       text: 'Central Idea',
-      x: window.innerWidth / 2 - 75,
-      y: window.innerHeight / 2 - 30,
+      x,
+      y,
       isRoot: true,
       level: 0,
     };
@@ -271,47 +283,49 @@ export const MindMapProvider: React.FC<{ children: React.ReactNode }> = ({ child
   }, []);
 
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement)?.tagName)) {
-        return;
-      }
+    if (typeof window !== 'undefined') {
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement)?.tagName)) {
+          return;
+        }
 
-      if (
-        (e.key === 'Delete' || e.key === 'Backspace') && 
-        state.selectedNodeId && 
-        !state.nodes.find(n => n.id === state.selectedNodeId)?.isRoot
-      ) {
-        deleteNode(state.selectedNodeId);
-      }
+        if (
+          (e.key === 'Delete' || e.key === 'Backspace') && 
+          state.selectedNodeId && 
+          !state.nodes.find(n => n.id === state.selectedNodeId)?.isRoot
+        ) {
+          deleteNode(state.selectedNodeId);
+        }
 
-      if (e.key === 'Tab' && state.selectedNodeId) {
-        e.preventDefault();
-        addChildNode(state.selectedNodeId);
-      }
+        if (e.key === 'Tab' && state.selectedNodeId) {
+          e.preventDefault();
+          addChildNode(state.selectedNodeId);
+        }
 
-      if ((e.ctrlKey || e.metaKey) && e.key === 'z' && !e.shiftKey) {
-        e.preventDefault();
-        undo();
-      }
+        if ((e.ctrlKey || e.metaKey) && e.key === 'z' && !e.shiftKey) {
+          e.preventDefault();
+          undo();
+        }
 
-      if ((e.ctrlKey || e.metaKey) && (e.key === 'y' || (e.shiftKey && e.key === 'z'))) {
-        e.preventDefault();
-        redo();
-      }
+        if ((e.ctrlKey || e.metaKey) && (e.key === 'y' || (e.shiftKey && e.key === 'z'))) {
+          e.preventDefault();
+          redo();
+        }
 
-      if ((e.ctrlKey || e.metaKey) && e.key === 's') {
-        e.preventDefault();
-        saveMindMap();
-      }
+        if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+          e.preventDefault();
+          saveMindMap();
+        }
 
-      if ((e.ctrlKey || e.metaKey) && e.key === 'n') {
-        e.preventDefault();
-        createNewMindMap();
-      }
-    };
+        if ((e.ctrlKey || e.metaKey) && e.key === 'n') {
+          e.preventDefault();
+          createNewMindMap();
+        }
+      };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+      window.addEventListener('keydown', handleKeyDown);
+      return () => window.removeEventListener('keydown', handleKeyDown);
+    }
   }, [state, undo, redo, saveMindMap, createNewMindMap, deleteNode, addChildNode]);
 
   useEffect(() => {

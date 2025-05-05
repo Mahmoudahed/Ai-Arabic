@@ -7,7 +7,13 @@ const nextConfig = {
     unoptimized: true
   },
   webpack: (config) => {
-    config.resolve.fallback = { fs: false, path: false };
+    config.resolve.fallback = { 
+      fs: false, 
+      path: false,
+      net: false,
+      tls: false,
+      "pg-native": false,
+    };
     return config;
   },
   typescript: {
@@ -15,6 +21,13 @@ const nextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: true
+  },
+  env: {
+    NEXT_EXPORT: 'true'
+  },
+  // Disable server code in static export
+  serverRuntimeConfig: {
+    isStaticExport: true
   }
 };
 

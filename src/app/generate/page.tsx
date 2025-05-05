@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { generateContent } from '../../lib/gemini';
 import toast from 'react-hot-toast';
@@ -166,9 +166,19 @@ const languages = [
   'لغة الإشارة'
 ];
 
-export default function GeneratePage() {
+// Main component with suspense boundary
+export default function GeneratePageWrapper() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="text-2xl">Loading...</div></div>}>
+      <GeneratePage />
+    </Suspense>
+  );
+}
+
+// Main page component (with the actual content)
+function GeneratePage() {
   const searchParams = useSearchParams();
-  const contentType = searchParams.get('type');
+  const contentType = searchParams?.get('type') || '';
 
   const [language, setLanguage] = useState('');
   const [dialect, setDialect] = useState('');
